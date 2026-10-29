@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samia Ghulam Qadir — AI Automation &amp; Machine Learning Developer</title>
+  <meta name="description" content="Portfolio of Samia Ghulam Qadir: AI Engineer &amp; ML Developer specializing in autonomous AI agents, LLM applications, Computer Vision, and intelligent workflow automation." />
+  <meta name="keywords" content="Samia Ghulam Qadir, Samia Qadir, AI Engineer, Machine Learning, AI Agents, React Native, Groq, LLaMA 3.1, RAG, Computer Vision, Deep Learning, TensorFlow, Python, n8n" />
+  <meta name="author" content="Samia Ghulam Qadir" />
+  <meta name="theme-color" content="#e7e5e1" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Samia Ghulam Qadir — AI Engineer &amp; ML Developer" />
+  <meta property="og:description" content="Explore verified projects in LLM Applications, React Native GenAI, Computer Vision, RAG architectures, and workflow automation." />
+  <meta property="og:url" content="https://github.com/Samiaqadir" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Samia Ghulam Qadir — AI Engineer" />
+  <meta name="twitter:description" content="Portfolio of Samia Ghulam Qadir: AI Automation &amp; Machine Learning Developer." />
+
+  <!-- Favicon Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23111111'/><text x='50' y='68' font-family='system-ui, sans-serif' font-size='56' font-weight='600' fill='%23f2f0ec' text-anchor='middle'>S</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #e7e5e1;          /* warm paper grey, matches photo backdrop */
+      --bg-alt: #f4f3f0;
+      --ink: #111111;
+      --ink-2: #2b2b2b;
+      --muted: #5f5d59;
+      --line: rgba(17, 17, 17, 0.14);
+      --band: #111111;
+      --band-text: #f2f0ec;
+      --band-muted: #a19e98;
+
+      --glass: rgba(255, 255, 255, 0.46);
+      --glass-hover: rgba(255, 255, 255, 0.68);
+      --glass-border: rgba(255, 255, 255, 0.75);
+      --glass-shadow: 0 10px 30px rgba(17, 17, 17, 0.06);
+
+      --font-display: "Jost", "Futura", "Century Gothic", sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+
+      --r-lg: 20px;
+      --r-md: 14px;
+      --gutter: clamp(16px, 4.5vw, 64px);
+      --max: 1240px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* Custom smooth cursor (desktop only) */
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot {
+        position: fixed; top: 0; left: 0; width: 8px; height: 8px; border-radius: 50%;
+        background: var(--ink); pointer-events: none; z-index: 9999;
+        transform: translate(-50%, -50%); transition: opacity 0.2s, transform 0.15s ease-out;
+      }
+      .cursor-ring {
+        position: fixed; top: 0; left: 0; width: 34px; height: 34px; border-radius: 50%;
+        border: 1px solid rgba(17, 17, 17, 0.35); pointer-events: none; z-index: 9998;
+        transform: translate(-50%, -50%); transition: width 0.25s, height 0.25s, background-color 0.25s, border-color 0.25s;
+      }
+      body.cursor-hover .cursor-ring {
+        width: 52px; height: 52px; background: rgba(17, 17, 17, 0.08); border-color: var(--ink);
+      }
+      body.cursor-hover .cursor-dot { transform: translate(-50%, -50%) scale(0.5); }
+    }
+    @media (hover: none) or (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none !important; }
+    }
+
+    /* Small letter-spaced label */
+    .label {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      line-height: 1.9;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 8px 8px 8px 26px; min-height: 50px;
+      border-radius: 999px;
+      background: var(--ink); color: var(--bg-alt);
+      font-family: var(--font-display); font-size: 0.74rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+      border: 1px solid var(--ink); cursor: pointer;
+      transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .btn .ic {
+      display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--bg-alt); color: var(--ink);
+      transition: transform 0.35s cubic-bezier(.2, .8, .2, 1), background 0.3s, color 0.3s;
+    }
+    .btn .ic svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(17, 17, 17, 0.18); }
+    .btn:hover .ic { transform: rotate(-45deg); }
+
+    .btn-outline {
+      background: transparent; color: var(--ink); border-color: rgba(17, 17, 17, 0.35);
+      padding: 0 28px;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--bg-alt); border-color: var(--ink); }
+
+    .btn.light { background: var(--band-text); color: var(--ink); border-color: var(--band-text); }
+    .btn.light .ic { background: var(--ink); color: var(--band-text); }
+    .btn.light:hover { box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45); }
+    .btn-outline.light { background: transparent; color: var(--band-text); border-color: rgba(242, 240, 236, 0.35); }
+    .btn-outline.light:hover { background: var(--band-text); color: var(--ink); border-color: var(--band-text); }
+
+    a:focus-visible, .btn:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--ink); outline-offset: 4px;
+    }
+
+    .link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-display); font-size: 0.74rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding-bottom: 4px; border-bottom: 1px solid currentColor;
+      transition: gap 0.25s, opacity 0.25s; cursor: pointer;
+    }
+    .link:hover { gap: 14px; opacity: 0.7; }
+
+    /* ---------- Loader ---------- */
+    .loader {
+      position: fixed; inset: 0; z-index: 2000;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: var(--bg); transition: opacity 0.6s ease;
+    }
+    .loader-word { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 6vw, 3.8rem); letter-spacing: 0.16em; margin-bottom: 4px; }
+    .loader-sub { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .loader-bar-wrap { width: min(280px, 70vw); }
+    .loader-bar { width: 100%; height: 2px; background: rgba(17, 17, 17, 0.12); border-radius: 2px; overflow: hidden; margin-bottom: 12px; }
+    .loader-bar span { display: block; height: 100%; width: 0; background: var(--ink); transition: width 0.15s ease-out; }
+    .loader-meta { display: flex; justify-content: space-between; font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+    .skip-load-btn {
+      margin-top: 24px; background: none; border: none; font-family: var(--font-display); font-size: 0.68rem;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); cursor: pointer; opacity: 0;
+      transition: opacity 0.4s, color 0.2s;
+    }
+    .skip-load-btn.visible { opacity: 1; }
+    .skip-load-btn:hover { color: var(--ink); text-decoration: underline; }
+
+    /* ---------- Fixed, centred frame sequence ---------- */
+    .bg-stage { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--bg); }
+    .bg-stage canvas { width: 100%; height: 100%; display: block; filter: grayscale(1) contrast(1.06) brightness(1.02); }
+    .bg-shade { position: absolute; inset: 0; background: var(--bg); opacity: 0; pointer-events: none; }
+    main, footer { position: relative; }
+    .blend { color: #fff; mix-blend-mode: difference; }
+
+    /* ---------- Announcement bar + header ---------- */
+    .topbar {
+      position: relative; z-index: 60;
+      background: var(--band); color: var(--band-text);
+      font-family: var(--font-display); font-size: 0.66rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; height: 34px; max-width: none; }
+    .topbar-status { display: inline-flex; align-items: center; gap: 8px; }
+    .topbar-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
+    .topbar nav { display: flex; gap: 14px; }
+    .topbar nav span { opacity: 0.4; }
+
+    header {
+      position: fixed; top: 34px; left: 0; right: 0; z-index: 50;
+      transition: background 0.35s, top 0.35s, box-shadow 0.35s;
+      color: #fff; mix-blend-mode: difference;
+    }
+    header.scrolled { top: 12px; color: var(--ink); mix-blend-mode: normal; }
+    header .container {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      height: 76px; max-width: none;
+      border: 1px solid transparent; border-radius: 999px;
+      transition: height 0.35s, max-width 0.35s, padding 0.35s, background 0.35s, border-color 0.35s, box-shadow 0.35s;
+    }
+    header.scrolled .container {
+      height: 62px; width: calc(100% - 24px); max-width: 1240px; padding: 0 30px;
+      background: rgba(244, 243, 240, 0.9);
+      border-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 30px rgba(17, 17, 17, 0.08);
+      backdrop-filter: blur(18px) saturate(130%); -webkit-backdrop-filter: blur(18px) saturate(130%);
+    }
+    header.scrolled .logo { font-size: 1.6rem; }
+    header.scrolled .progress { left: 30px; width: calc(100% - 60px); height: 1.5px; border-radius: 2px; }
+    .nav-left, .nav-right {
+      display: flex; gap: 34px;
+      font-family: var(--font-display); font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .nav-right { justify-content: flex-end; gap: 24px; align-items: center; }
+    .nav-left a, .nav-right a { position: relative; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+    .nav-left a::after {
+      content: ""; position: absolute; left: 0; bottom: -5px; width: 100%; height: 1px;
+      background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
+    }
+    .nav-left a:hover::after, .nav-left a.active::after { transform: scaleX(1); }
+    .nav-right svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .logo { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; letter-spacing: 0.1em; transition: font-size 0.35s; }
+
+    .progress {
+      position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+      background: currentColor; opacity: 0.85; transform-origin: left; transform: scaleX(0);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none; background: none; border: none; cursor: pointer; width: 40px; height: 40px;
+      padding: 8px; flex-direction: column; justify-content: center; gap: 6px; align-items: flex-end;
+      color: inherit;
+    }
+    .menu-toggle span { display: block; width: 22px; height: 1.5px; background: currentColor; transition: transform 0.3s, width 0.3s, opacity 0.3s; }
+    .menu-toggle span:nth-child(2) { width: 15px; }
+    .menu-toggle.open span:nth-child(1) { transform: translateY(4px) rotate(45deg); width: 20px; }
+    .menu-toggle.open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); width: 20px; }
+
+    /* Mobile Navigation Drawer */
+    .mobile-nav {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(231, 229, 225, 0.96); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      display: flex; flex-direction: column; justify-content: space-between;
+      padding: 100px var(--gutter) 40px;
+      transform: translateY(-100%); transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      visibility: hidden;
+    }
+    .mobile-nav.open { transform: translateY(0); visibility: visible; }
+    .mobile-nav-links { display: flex; flex-direction: column; gap: 20px; }
+    .mobile-nav-links a {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 7vw, 2.8rem); font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase; display: flex; align-items: baseline; gap: 14px;
+    }
+    .mobile-nav-links a span.num { font-size: 0.85rem; color: var(--muted); font-family: var(--font-display); letter-spacing: 0.15em; }
+    .mobile-nav-footer { border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .mobile-nav-social { display: flex; gap: 20px; font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; height: calc(100vh - 34px); min-height: 620px; overflow: hidden; }
+    .hero-tag { position: absolute; top: 140px; left: var(--gutter); }
+    .hero-tag::after { content: ""; display: block; width: 34px; height: 1px; background: currentColor; margin-top: 10px; }
+    .wordmark {
+      position: absolute; left: 0; right: 0; top: 50%;
+      transform: translateY(-42%);
+      display: flex; justify-content: center;
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(5rem, 23vw, 22rem); line-height: 0.85; letter-spacing: -0.01em;
+      pointer-events: none;
+    }
+    .wordmark .ch { display: inline-block; overflow: hidden; padding: 0 0.01em; }
+    .wordmark .ch span { display: inline-block; }
+    .hero-actions { position: absolute; left: var(--gutter); bottom: 64px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .hero-side { position: absolute; right: var(--gutter); bottom: 64px; text-align: left; }
+    .hero-side::after { content: ""; display: block; width: 34px; height: 1px; background: currentColor; margin-top: 10px; }
+    .hero-role {
+      position: absolute; right: var(--gutter); top: 140px; text-align: right;
+      font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.04em;
+    }
+    .hero-role .typed { font-weight: 600; }
+    .hero-role .typed::after { content: "|"; font-weight: 400; margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ---------- Black band: focus areas ---------- */
+    .band { background: var(--band); color: var(--band-text); }
+    .focus { padding: 34px 0; }
+    .focus .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .focus-item { display: flex; gap: 24px; align-items: center; }
+    .focus-thumb {
+      flex: none; width: 92px; height: 112px;
+      display: grid; place-items: center;
+      background: #1d1d1d; border: 1px solid #2c2c2c; border-radius: var(--r-md);
+    }
+    .focus-thumb svg { width: 36px; height: 36px; stroke: var(--band-text); fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .focus-item h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .focus-item p { font-size: 0.8rem; color: #d3d0ca; line-height: 1.6; margin-bottom: 12px; }
+    .focus-item .link { font-size: 0.66rem; }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 120px 0; }
+    .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px; }
+    .h-section {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem); letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .h-big {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(3rem, 7vw, 5.6rem); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase;
+    }
+    .line-mask { display: block; overflow: hidden; }
+    .line-mask > span { display: block; }
+
+    /* About */
+    .about { min-height: 100vh; display: flex; align-items: center; }
+    .about-panel { max-width: 540px; }
+    .about .label { margin-bottom: 22px; }
+    .about .h-big { margin-bottom: 26px; }
+    .about p { font-size: 1rem; line-height: 1.75; color: var(--ink-2); margin-bottom: 28px; }
+    .about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-bottom: 34px; }
+    .about-facts div { font-size: 0.82rem; color: var(--muted); }
+    .about-facts b { display: block; font-family: var(--font-display); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
+    .about-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+    /* ---------- Glassmorphism ---------- */
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-radius: var(--r-lg);
+      backdrop-filter: blur(20px) saturate(120%);
+      -webkit-backdrop-filter: blur(20px) saturate(120%);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .glass.hover:hover { background: var(--glass-hover); border-color: rgba(17, 17, 17, 0.18); transform: translateY(-6px); box-shadow: 0 18px 40px rgba(17, 17, 17, 0.1); }
+    .card .ic-box { display: grid; place-items: center; width: 58px; height: 58px; margin: 22px 0; border-radius: var(--r-md); background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(17, 17, 17, 0.08); transition: background 0.3s; }
+    .card:hover .ic-box { background: var(--ink); }
+    .card:hover .ic-box svg { stroke: var(--bg-alt); }
+    .about-panel.glass { padding: clamp(28px, 4vw, 48px); border-radius: 28px; }
+
+    /* Feature strip */
+    .features { padding: 0; border-left: 0; border-right: 0; border-radius: 0; }
+    .features .container { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .feature { display: flex; gap: 18px; align-items: center; padding: 38px 28px; }
+    .feature + .feature { border-left: 1px solid var(--line); }
+    .feature svg { flex: none; width: 34px; height: 34px; stroke: var(--ink); fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .feature h4 { font-family: var(--font-display); font-weight: 600; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+    .feature p { font-size: 0.76rem; color: var(--muted); }
+
+    /* ---------- Impact Metrics Counter Bar ---------- */
+    .metrics-bar {
+      margin: 40px 0 0;
+      padding: 36px 32px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .metric-box { text-align: left; position: relative; }
+    .metric-box + .metric-box::before {
+      content: ""; position: absolute; left: -12px; top: 15%; height: 70%; width: 1px; background: var(--line);
+    }
+    .metric-num {
+      font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 600; line-height: 1;
+      letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; display: flex; align-items: baseline;
+    }
+    .metric-label { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+
+    /* Services */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 34px 30px 38px; }
+    .card .idx { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--muted); }
+    .card svg { display: block; width: 26px; height: 26px; transition: stroke 0.3s; stroke: var(--ink); fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .card h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .card p { font-size: 0.84rem; line-height: 1.7; color: var(--muted); }
+
+    /* Resume */
+    .resume-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px; align-items: start; }
+    .resume-main { padding: 38px 36px; }
+    .resume-side { display: grid; gap: 18px; }
+    .resume-side .sub { padding: 38px 36px; }
+    .col-label { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 16px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+    .tl-item { padding-bottom: 28px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-bottom: 4px; }
+    .tl-item h5 { font-family: var(--font-display); font-weight: 500; font-size: 1.12rem; letter-spacing: 0.02em; }
+    .tl-date { flex: none; font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .tl-item .org { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+    .tl-item ul { list-style: none; }
+    .tl-item li { position: relative; padding-left: 18px; font-size: 0.84rem; line-height: 1.65; color: var(--ink-2); margin-bottom: 6px; }
+    .tl-item li::before { content: ""; position: absolute; left: 0; top: 0.75em; width: 8px; height: 1px; background: var(--ink); }
+
+    .skills { margin-top: 18px; padding: 38px 36px; }
+    .skill-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px 40px; }
+    .skill-group h6 { font-family: var(--font-display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 12px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font-size: 0.74rem; padding: 6px 13px; border-radius: 999px; border: 1px solid rgba(17, 17, 17, 0.22); background: rgba(255, 255, 255, 0.35); transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s; cursor: default; }
+    .chip:hover { background: var(--ink); color: var(--bg-alt); border-color: var(--ink); transform: translateY(-2px); }
+
+    /* ---------- Projects Filter Bar ---------- */
+    .projects-sec { background: rgba(244, 243, 240, 0.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn {
+      padding: 8px 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(17, 17, 17, 0.15); font-family: var(--font-display); font-size: 0.7rem;
+      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+      cursor: pointer; transition: all 0.25s ease;
+    }
+    .filter-btn:hover { background: var(--ink); color: var(--bg-alt); border-color: var(--ink); }
+    .filter-btn.active { background: var(--ink); color: var(--bg-alt); border-color: var(--ink); box-shadow: 0 4px 14px rgba(17, 17, 17, 0.15); }
+
+    /* Projects grid */
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project { display: flex; flex-direction: column; cursor: pointer; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .project.featured { grid-column: span 2; }
+    .project-visual {
+      position: relative; aspect-ratio: 4 / 3.2; overflow: hidden; margin-bottom: 18px; border-radius: var(--r-lg);
+      transition: box-shadow 0.4s, transform 0.4s;
+      background: linear-gradient(160deg, #d7d5d1, #bdbab5);
+      display: grid; place-items: center;
+    }
+    .project.featured .project-visual { aspect-ratio: auto; flex: 1; min-height: 250px; }
+    .project-visual .num {
+      position: absolute; left: 22px; bottom: 6px;
+      font-family: var(--font-display); font-weight: 500; font-size: clamp(4rem, 8vw, 7rem); line-height: 1;
+      color: rgba(17, 17, 17, 0.12);
+    }
+    .project-badge {
+      position: absolute; top: 16px; left: 16px; font-family: var(--font-display); font-size: 0.62rem;
+      font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 12px;
+      border-radius: 999px; background: rgba(255, 255, 255, 0.85); color: var(--ink);
+      backdrop-filter: blur(8px);
+    }
+    .project-gh-pill {
+      position: absolute; bottom: 14px; right: 14px;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(17, 17, 17, 0.85); color: #f2f0ec;
+      font-family: var(--font-display); font-size: 0.64rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: background 0.2s, transform 0.2s, border-color 0.2s;
+      z-index: 5;
+    }
+    .project-gh-pill svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .project-gh-pill:hover { background: #000; transform: scale(1.04); border-color: rgba(255, 255, 255, 0.6); }
+
+    .project-visual svg.art { width: 30%; max-width: 110px; stroke: var(--ink); fill: none; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.6s; }
+    .project:hover { transform: translateY(-4px); }
+    .project:hover .project-visual { box-shadow: 0 20px 45px rgba(17, 17, 17, 0.15); }
+    .project:hover .project-visual svg.art { transform: scale(1.08) rotate(-3deg); }
+    .project-visual .go {
+      position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%;
+      display: grid; place-items: center; background: rgba(255, 255, 255, 0.85);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .project-visual .go svg { width: 15px; height: 15px; stroke: var(--ink); fill: none; stroke-width: 1.8; transition: stroke 0.2s; }
+    .project:hover .go { background: var(--ink); transform: rotate(-45deg); }
+    .project:hover .go svg { stroke: #fff; }
+    .project .when { font-family: var(--font-display); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .project h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .project p { font-size: 0.84rem; line-height: 1.65; color: var(--muted); margin-bottom: 14px; }
+    .project-cta { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+    .project-cta svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform 0.25s; }
+    .project:hover .project-cta svg { transform: translateX(4px); }
+
+    /* ---------- Project Case Study Modal ---------- */
+    .modal-backdrop {
+      position: fixed; inset: 0; z-index: 3000;
+      background: rgba(17, 17, 17, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center; padding: 24px var(--gutter);
+      opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
+    }
+    .modal-backdrop.active { opacity: 1; pointer-events: auto; }
+    .modal-box {
+      width: 100%; max-width: 820px; max-height: 88vh; overflow-y: auto;
+      background: #f4f3f0; border-radius: 24px; padding: clamp(28px, 4vw, 48px);
+      position: relative; transform: translateY(24px) scale(0.97); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .modal-backdrop.active .modal-box { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(17, 17, 17, 0.15); background: rgba(255, 255, 255, 0.7);
+      display: grid; place-items: center; font-size: 1.3rem; cursor: pointer; color: var(--ink);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .modal-close:hover { background: var(--ink); color: #fff; transform: rotate(90deg); }
+    .modal-header { margin-bottom: 24px; padding-right: 48px; }
+    .modal-header .label { color: var(--muted); margin-bottom: 6px; }
+    .modal-header h3 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; margin-bottom: 8px; }
+    .modal-tagline { font-size: 1rem; color: var(--ink-2); line-height: 1.5; }
+    .modal-body { display: grid; gap: 24px; }
+    .modal-section h5 { font-family: var(--font-display); font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+    .modal-section p { font-size: 0.88rem; line-height: 1.7; color: var(--ink-2); }
+    .modal-list { list-style: none; display: grid; gap: 8px; }
+    .modal-list li { position: relative; padding-left: 20px; font-size: 0.86rem; line-height: 1.6; color: var(--ink-2); }
+    .modal-list li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 2px; background: var(--ink); }
+    .modal-metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 8px 0; }
+    .modal-metric-card { background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(17, 17, 17, 0.08); padding: 14px 18px; border-radius: var(--r-md); }
+    .modal-metric-card small { display: block; font-family: var(--font-display); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .modal-metric-card strong { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+    .modal-footer { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+    /* ---------- Interactive Contact Section & Form ---------- */
+    .contact { padding: 120px 0 0; }
+    .contact .label { color: var(--band-muted); margin-bottom: 22px; }
+    .contact-top { display: grid; grid-template-columns: 1.1fr 1fr; gap: 54px; align-items: start; padding-bottom: 72px; }
+    .contact p.lead { color: #d3d0ca; font-size: 0.95rem; line-height: 1.75; margin-bottom: 28px; }
+
+    /* Direct Contact Form */
+    .contact-form {
+      background: #181818; border: 1px solid #282828; border-radius: var(--r-lg); padding: 32px;
+      display: grid; gap: 16px;
+    }
+    .form-group { display: grid; gap: 6px; }
+    .form-group label { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--band-muted); }
+    .form-control {
+      background: #111; border: 1px solid #333; border-radius: 10px; padding: 12px 16px; color: #fff;
+      font-family: var(--font-body); font-size: 0.88rem; transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .form-control:focus { outline: none; border-color: #888; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1); }
+    textarea.form-control { resize: vertical; min-height: 90px; }
+    .form-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+
+    .contact-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding-bottom: 72px; }
+    .contact-item { display: flex; gap: 16px; align-items: center; padding: 26px 22px; border: 1px solid #2a2a2a; border-radius: var(--r-lg); background: #161616; transition: background 0.3s, border-color 0.3s, transform 0.3s; cursor: pointer; }
+    .contact-item:hover { background: #1d1d1d; border-color: #444; transform: translateY(-4px); }
+    .contact-item svg { flex: none; width: 28px; height: 28px; stroke: var(--band-text); fill: none; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-item small { display: block; font-family: var(--font-display); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--band-muted); margin-bottom: 4px; }
+    .contact-item strong { font-size: 0.82rem; font-weight: 500; word-break: break-all; }
+
+    /* ---------- Toast Notification ---------- */
+    .toast {
+      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(40px);
+      background: #111; color: #f2f0ec; padding: 12px 24px; border-radius: 999px;
+      font-family: var(--font-display); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 10px; z-index: 4000;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35); border: 1px solid #333;
+      opacity: 0; pointer-events: none; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+    .toast-ic { color: #4ade80; font-weight: 700; }
+
+    /* ---------- Back to Top Button ---------- */
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px; width: 46px; height: 46px; border-radius: 50%;
+      background: rgba(244, 243, 240, 0.9); border: 1px solid rgba(17, 17, 17, 0.15);
+      color: var(--ink); display: grid; place-items: center; z-index: 90; cursor: pointer;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 24px rgba(17, 17, 17, 0.1);
+      opacity: 0; visibility: hidden; transform: translateY(12px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.25s, color 0.25s;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--ink); color: #fff; transform: translateY(-3px); }
+    .back-to-top svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    footer { background: var(--band); color: var(--band-muted); border-top: 1px solid #2a2a2a; }
+    footer .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 24px; padding-bottom: 24px; font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    /* ---------- Responsive Breakpoints ---------- */
+    @media (max-width: 1050px) {
+      .features .container, .contact-list { grid-template-columns: 1fr 1fr; }
+      .feature:nth-child(3) { border-left: 0; }
+      .cards, .projects { grid-template-columns: 1fr 1fr; }
+      .resume-grid, .contact-top { grid-template-columns: 1fr; }
+      .metrics-bar { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .metric-box + .metric-box::before { display: none; }
+      .skill-groups { grid-template-columns: 1fr 1fr; }
+      .focus .container { grid-template-columns: 1fr; gap: 22px; }
+    }
+    @media (max-width: 800px) {
+      .topbar .container > span { display: none; }
+      .topbar .container { justify-content: center; }
+      .nav-left { display: none; }
+      .nav-right .hide-sm { display: none; }
+      .menu-toggle { display: flex; }
+      header .container { grid-template-columns: auto 1fr auto; padding: 0 18px; }
+      .logo { font-size: 1.5rem; }
+      .hero-tag { display: none; }
+      .hero-role { display: none; }
+      .hero-actions { bottom: 56px; gap: 10px; right: var(--gutter); }
+      .btn { font-size: 0.68rem; min-height: 46px; }
+      .btn-outline { padding: 0 20px; }
+      header.scrolled .container { padding: 0 18px; }
+      .hero-side { display: none; }
+      .wordmark { top: auto; bottom: 150px; transform: none; font-size: 24vw; }
+      .features .container, .contact-list, .cards, .projects, .skill-groups, .metrics-bar { grid-template-columns: 1fr; }
+      .feature + .feature { border-left: 0; border-top: 1px solid var(--line); }
+      .project.featured { grid-column: auto; }
+      .project.featured .project-visual { aspect-ratio: 4 / 3.2; flex: none; }
+      .about-facts { grid-template-columns: 1fr; }
+      section.block { padding: 84px 0; }
+      .resume-main, .resume-side .sub, .skills { padding: 28px 22px; }
+      .tl-top { flex-direction: column; gap: 2px; }
+      .modal-metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor (Desktop) -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Preloader -->
+  <div class="loader" id="loader">
+    <div style="text-align:center">
+      <div class="loader-word">SAMIA</div>
+      <div class="loader-sub">AI Automation &amp; Machine Learning</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"><span id="loaderFill"></span></div>
+        <div class="loader-meta">
+          <span>Loading Experience</span>
+          <span id="loaderPercent">0%</span>
+        </div>
+      </div>
+      <button class="skip-load-btn" id="skipLoadBtn">Enter Portfolio →</button>
+    </div>
+  </div>
+
+  <!-- Background Scrubber Stage -->
+  <div class="bg-stage">
+    <canvas id="frames"></canvas>
+    <div class="bg-shade"></div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-status">
+        <span class="topbar-dot"></span>
+        <span>Open to AI Engineering &amp; ML Automation Roles (2026)</span>
+      </div>
+      <nav>
+        <a href="https://github.com/Samiaqadir" target="_blank" rel="noopener">GitHub</a><span>|</span>
+        <a href="http://www.linkedin.com/in/samiaghulamqadir" target="_blank" rel="noopener">LinkedIn</a><span>|</span>
+        <a href="Samia_Qadir_CV_Updated.pdf" download>Download CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Floating Responsive Header -->
+  <header>
+    <div class="container">
+      <nav class="nav-left">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#resume">Resume</a>
+        <a href="#portfolio">Work</a>
+      </nav>
+      <a href="#home" class="logo">SAMIA</a>
+      <nav class="nav-right">
+        <a href="mailto:samiaqadir906@gmail.com" class="hide-sm">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>Email
+        </a>
+        <a href="Samia_Qadir_CV_Updated.pdf" download class="hide-sm">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>CV
+        </a>
+        <a href="#contact">
+          <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4-7.5L21 3v5h-5"/></svg>Contact
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span><span></span>
+        </button>
+      </nav>
+      <div class="progress"></div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-links">
+      <a href="#home" class="mobile-link"><span class="num">00</span>Home</a>
+      <a href="#about" class="mobile-link"><span class="num">01</span>About</a>
+      <a href="#services" class="mobile-link"><span class="num">02</span>Services</a>
+      <a href="#resume" class="mobile-link"><span class="num">03</span>Resume</a>
+      <a href="#portfolio" class="mobile-link"><span class="num">04</span>Work</a>
+      <a href="#contact" class="mobile-link"><span class="num">05</span>Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="Samia_Qadir_CV_Updated.pdf" download class="btn" style="flex:1">Download CV</a>
+        <a href="mailto:samiaqadir906@gmail.com" class="btn btn-outline" style="flex:1">Email Me</a>
+      </div>
+      <div class="mobile-nav-social">
+        <a href="https://github.com/Samiaqadir" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="http://www.linkedin.com/in/samiaghulamqadir" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="hero-tag label blend reveal-hero">AI that thinks<br />and works<br />with you.</div>
+      <div class="hero-role blend reveal-hero">I am an <span class="typed"></span></div>
+
+      <h1 class="wordmark blend" aria-label="Samia">
+        <span class="ch"><span>S</span></span><span class="ch"><span>A</span></span><span class="ch"><span>M</span></span><span class="ch"><span>I</span></span><span class="ch"><span>A</span></span>
+      </h1>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn reveal-hero">Contact Me <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#portfolio" class="btn btn-outline reveal-hero">Explore my work</a>
+      </div>
+      <div class="hero-side label reveal-hero">AI Engineer<br />ML Developer<br />2026</div>
+    </section>
+
+    <!-- ================= FOCUS BAND ================= -->
+    <section class="band focus">
+      <div class="container">
+        <div class="focus-item reveal-up">
+          <div class="focus-thumb"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 12v3M22 12v3"/></svg></div>
+          <div>
+            <h3>AI Agents &amp; GenAI</h3>
+            <p>LLM apps, React Native GenAI,<br />RAG systems &amp; prompt design.</p>
+            <a href="#services" class="link">See services →</a>
+          </div>
+        </div>
+        <div class="focus-item reveal-up">
+          <div class="focus-thumb"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div>
+            <h3>Computer Vision &amp; ML</h3>
+            <p>Deep learning CNN models<br />with TensorFlow &amp; Keras.</p>
+            <a href="#portfolio" class="link">See projects →</a>
+          </div>
+        </div>
+        <div class="focus-item reveal-up">
+          <div class="focus-thumb"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg></div>
+          <div>
+            <h3>Automation</h3>
+            <p>n8n workflows, APIs and<br />Apify-powered lead gen.</p>
+            <a href="#resume" class="link">See experience →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="container" style="width:100%">
+        <div class="about-panel glass">
+          <div class="label reveal-up">Who am I</div>
+          <h2 class="h-big split"><span class="line-mask"><span>Hello,</span></span><span class="line-mask"><span>I'm Samia</span></span></h2>
+          <p class="reveal-up">
+            AI graduate and AI Automation &amp; Machine Learning Developer Intern with hands-on experience in
+            LLM-based AI applications, Retrieval-Augmented Generation (RAG), prompt engineering, and deep learning.
+            I develop full-stack GenAI mobile apps, train computer vision CNN models, build offline speech pipelines, and translate technical research into reliable AI products.
+          </p>
+          <div class="about-facts reveal-up">
+            <div><b>Name</b>Samia Ghulam Qadir</div>
+            <div><b>Based in</b>Rahim Yar Khan, Pakistan</div>
+            <div><b>Degree</b>BS Artificial Intelligence (2022–2026)</div>
+            <div><b>Email</b>samiaqadir906@gmail.com</div>
+          </div>
+          <div class="about-actions reveal-up">
+            <a href="Samia_Qadir_CV_Updated.pdf" class="btn" download>Download CV <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></span></a>
+            <button class="btn btn-outline" id="copyEmailQuickBtn" type="button">Copy Email</button>
+          </div>
+        </div>
+
+        <!-- Impact Metrics Bar -->
+        <div class="metrics-bar glass reveal-up">
+          <div class="metric-box">
+            <div class="metric-num"><span class="counter" data-target="7">0</span><span>+</span></div>
+            <div class="metric-label">Featured AI Projects</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num"><span class="counter" data-target="50000">0</span><span>+</span></div>
+            <div class="metric-label">Images Classified (CNN)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num">&lt;<span class="counter" data-target="300">0</span><span>ms</span></div>
+            <div class="metric-label">Speech &amp; Groq Latency</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num"><span class="counter-decimal" data-target="3.24">0.00</span></div>
+            <div class="metric-label">Academic CGPA (BS AI)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE STRIP ================= -->
+    <section class="features glass">
+      <div class="container">
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+          <div><h4>BS Artificial Intelligence</h4><p>KFUEIT · 2022 – 2026</p></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+          <div><h4>CMIT Internship</h4><p>SMJ Solutions · 2026</p></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+          <div><h4>DeepLearning.AI</h4><p>Agent Skills &amp; Prompt Engineering</p></div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><h4>Open Source</h4><p>Verified GitHub Codebases</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="block" id="services">
+      <div class="container">
+        <div class="head-row">
+          <h2 class="h-section split"><span class="line-mask"><span>What I Do</span></span></h2>
+          <span class="label">06 Core Capabilities</span>
+        </div>
+        <div class="cards">
+          <div class="card glass hover">
+            <span class="idx">01</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 12v3M22 12v3"/></svg></span>
+            <h4>AI Agents &amp; LLM Apps</h4>
+            <p>Production business agents and GenAI mobile apps with fast inference (Groq/Claude), tool calling, and structured schema prompting.</p>
+          </div>
+          <div class="card glass hover">
+            <span class="idx">02</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+            <h4>RAG Knowledge Systems</h4>
+            <p>Retrieval-Augmented Generation pipelines with vector databases, role-based document access, and human-in-the-loop escalation.</p>
+          </div>
+          <div class="card glass hover">
+            <span class="idx">03</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.5 6h7M7.2 8.2l3.6 7.6M16.8 8.2l-3.6 7.6"/></svg></span>
+            <h4>Workflow Automation</h4>
+            <p>n8n automated pipelines, REST APIs, and Apify-powered scraping agents that eliminate manual, repetitive organizational tasks.</p>
+          </div>
+          <div class="card glass hover">
+            <span class="idx">04</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h4>Computer Vision</h4>
+            <p>CNN architectures in TensorFlow and Keras for multi-class image recognition, medical diagnostics, and agricultural crop pathology.</p>
+          </div>
+          <div class="card glass hover">
+            <span class="idx">05</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg></span>
+            <h4>Voice &amp; Audio AI</h4>
+            <p>Low-latency Speech-to-Text with faster-whisper and fast neural text-to-speech with Piper for responsive, hands-free multimodal agents.</p>
+          </div>
+          <div class="card glass hover">
+            <span class="idx">06</span>
+            <span class="ic-box"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+            <h4>Mobile GenAI Apps</h4>
+            <p>Cross-platform mobile applications in React Native integrated with modern GenAI APIs (Groq, LLaMA 3.1) and persistent offline storage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUME ================= -->
+    <section class="block" id="resume">
+      <div class="container">
+        <div class="head-row">
+          <h2 class="h-section split"><span class="line-mask"><span>Resume</span></span></h2>
+          <a href="Samia_Qadir_CV_Updated.pdf" download class="link">Download PDF CV ↗</a>
+        </div>
+
+        <div class="resume-grid">
+          <div class="resume-main glass reveal-up">
+            <div class="col-label"><span class="label">Experience</span><span class="label">02</span></div>
+            <div class="tl-item">
+              <div class="tl-top"><h5>AI Automation &amp; ML Developer Intern</h5><span class="tl-date">2026 – Present</span></div>
+              <div class="org">SMJ Solutions, Rahim Yar Khan · CMIT Internship Program, Govt of Punjab</div>
+              <ul>
+                <li>Core AI Engineer on the AI Employee Suite: HR, Sales, Marketing, and Support agents with an Executive CEO Dashboard.</li>
+                <li>Designed the HR and Support agents: specialized system prompts, LLM selection, and automated tool testing strategy.</li>
+                <li>Architected the multi-tier HR agent RAG knowledge base with role-based document access and human escalation protocols.</li>
+                <li>Proposed high-impact AI products through R&amp;D: predictive maintenance, procurement intelligence, ESG compliance, and BI copilots.</li>
+                <li>Conducted QA testing on corporate software platforms and spearheaded automated B2B lead generation via Apify workflows.</li>
+              </ul>
+            </div>
+            <div class="tl-item">
+              <div class="tl-top"><h5>AI &amp; React Native Developer</h5><span class="tl-date">2024 – 2025</span></div>
+              <div class="org">Academic &amp; Open Source Projects · KFUEIT</div>
+              <ul>
+                <li>Built GenAI mobile applications using React Native, Groq Cloud API, and TypeScript.</li>
+                <li>Integrated Firebase for user authentication, cloud database, and image storage pipelines.</li>
+                <li>Trained and linked machine learning image classification endpoints with responsive mobile UI feedback.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-side">
+            <div class="sub glass reveal-up">
+              <div class="col-label"><span class="label">Education</span><span class="label">01</span></div>
+              <div class="tl-item">
+                <div class="tl-top"><h5>Bachelor of Artificial Intelligence</h5><span class="tl-date">2022 – 2026</span></div>
+                <div class="org">Khawaja Fareed University of Engineering &amp; IT (KFUEIT) · CGPA 3.24</div>
+                <p style="font-size:0.82rem; color:var(--muted); line-height:1.6; margin-top:8px;">
+                  Comprehensive curriculum in Deep Learning, Computer Vision, Algorithms, Natural Language Processing, and Artificial Neural Networks.
+                </p>
+              </div>
+            </div>
+            <div class="sub glass reveal-up">
+              <div class="col-label"><span class="label">Certifications</span><span class="label">02</span></div>
+              <div class="tl-item">
+                <div class="tl-top"><h5>Building Agent Skills with Anthropic</h5><span class="tl-date">Jun 2026</span></div>
+                <div class="org">DeepLearning.AI · Multi-step reasoning, external tool execution, and autonomous agent workflows with Claude.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-top"><h5>AI Prompting for Everyone</h5><span class="tl-date">Jun 2026</span></div>
+                <div class="org">DeepLearning.AI · Advanced prompt engineering, structured JSON outputs, and evaluation metrics for LLM integration.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills glass reveal-up">
+          <div class="col-label"><span class="label">Technical Toolkit</span><span class="label">Verified Skills</span></div>
+          <div class="skill-groups">
+            <div class="skill-group"><h6>AI &amp; LLM Orchestration</h6><div class="chips">
+              <span class="chip">LLM Applications</span><span class="chip">Groq Cloud API</span><span class="chip">LLaMA 3.1</span><span class="chip">Prompt Engineering</span><span class="chip">RAG Architectures</span><span class="chip">faster-whisper STT</span><span class="chip">Piper Neural TTS</span><span class="chip">Vector Search</span>
+            </div></div>
+            <div class="skill-group"><h6>ML &amp; Deep Learning</h6><div class="chips">
+              <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Convolutional Neural Networks</span><span class="chip">Scikit-Learn</span><span class="chip">NLTK / NLP</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+            </div></div>
+            <div class="skill-group"><h6>Automation &amp; Data</h6><div class="chips">
+              <span class="chip">n8n</span><span class="chip">Workflow Automation</span><span class="chip">REST APIs</span><span class="chip">Apify Scraping</span><span class="chip">Lead Generation</span><span class="chip">Streamlit</span>
+            </div></div>
+            <div class="skill-group"><h6>Programming Languages</h6><div class="chips">
+              <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">Java</span>
+            </div></div>
+            <div class="skill-group"><h6>App &amp; Cloud Stack</h6><div class="chips">
+              <span class="chip">React Native</span><span class="chip">AsyncStorage</span><span class="chip">Firebase Auth</span><span class="chip">Firestore</span><span class="chip">Git / GitHub</span><span class="chip">MySQL</span>
+            </div></div>
+            <div class="skill-group"><h6>Development Tools</h6><div class="chips">
+              <span class="chip">VS Code</span><span class="chip">PyCharm</span><span class="chip">Jupyter Notebooks</span><span class="chip">Postman</span><span class="chip">Linux / CLI</span>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="block projects-sec" id="portfolio">
+      <div class="container">
+        <div class="head-row">
+          <div>
+            <h2 class="h-section split"><span class="line-mask"><span>Selected Work</span></span></h2>
+            <p style="font-size:0.86rem; color:var(--muted); margin-top:8px;">Click any card to inspect full technical case study or open its GitHub repository</p>
+          </div>
+          <a href="https://github.com/Samiaqadir" target="_blank" rel="noopener" class="link">View GitHub Repositories ↗</a>
+        </div>
+
+        <!-- Dynamic Category Filter -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects (7)</button>
+          <button class="filter-btn" data-filter="ai-agents">AI &amp; LLM Apps (3)</button>
+          <button class="filter-btn" data-filter="vision">Computer Vision (2)</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning &amp; NLP (2)</button>
+        </div>
+
+        <div class="projects" id="projectsGrid">
+          <!-- 01: ResumeBuilderAI (Flagship Mobile GenAI App) -->
+          <article class="project featured" data-category="ai-agents" data-id="resume-builder-ai">
+            <div class="project-visual">
+              <span class="project-badge">Verified GitHub Repo</span>
+              <a href="https://github.com/Samiaqadir/ResumeBuilderAI" target="_blank" rel="noopener" class="project-gh-pill" title="View Source on GitHub" onclick="event.stopPropagation();">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/></svg>
+                GitHub Repo ↗
+              </a>
+              <span class="num">01</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/><circle cx="16" cy="16" r="2"/></svg>
+            </div>
+            <div class="when">2026 · Open Source Project</div>
+            <h4>ResumeBuilderAI — Mobile GenAI App</h4>
+            <p>AI-powered mobile application built in React Native that crafts ATS-optimized resumes and tailored cover letters using Groq's high-speed LLaMA 3.1 8B API with offline AsyncStorage persistence.</p>
+            <div class="chips"><span class="chip">React Native</span><span class="chip">Groq Cloud API</span><span class="chip">LLaMA 3.1</span><span class="chip">TypeScript</span><span class="chip">AsyncStorage</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 02: Voice + Gesture PC Agent -->
+          <article class="project" data-category="ai-agents" data-id="pc-agent">
+            <div class="project-visual">
+              <span class="project-badge">Active Team R&amp;D</span>
+              <span class="num">02</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg>
+            </div>
+            <div class="when">2026 – Present · Team R&amp;D</div>
+            <h4>Voice + Gesture PC Agent</h4>
+            <p>Multimodal desktop companion controlling a PC via speech and hand gestures. Engineered the offline speech pipeline with faster-whisper STT and Piper TTS with dynamic 16kHz audio resampling.</p>
+            <div class="chips"><span class="chip">faster-whisper</span><span class="chip">Piper TTS</span><span class="chip">Python</span><span class="chip">Audio Resampling</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 03: CounselBot (Custom TensorFlow & NLP Guidance) -->
+          <article class="project" data-category="ml" data-id="counsel-bot">
+            <div class="project-visual">
+              <span class="project-badge">Verified GitHub Repo</span>
+              <a href="https://github.com/Samiaqadir/CounselBot-main" target="_blank" rel="noopener" class="project-gh-pill" title="View Source on GitHub" onclick="event.stopPropagation();">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/></svg>
+                GitHub Repo ↗
+              </a>
+              <span class="num">03</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3M8 12h.01M16 12h.01"/></svg>
+            </div>
+            <div class="when">Academic Project · KFUEIT</div>
+            <h4>CounselBot — Career AI Platform</h4>
+            <p>Career counseling platform powered by a custom-trained TensorFlow neural network model and NLTK text processing, predicting top 5 matching professions via an interactive Streamlit UI.</p>
+            <div class="chips"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">NLTK</span><span class="chip">Streamlit</span><span class="chip">Python</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 04: AI Employee Suite -->
+          <article class="project" data-category="ai-agents" data-id="ai-suite">
+            <div class="project-visual">
+              <span class="project-badge">Enterprise Production</span>
+              <span class="num">04</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 14h3M8 17h6M14 14h2"/></svg>
+            </div>
+            <div class="when">2026 – Present · SMJ Solutions</div>
+            <h4>AI Employee Suite</h4>
+            <p>HR, Sales, Marketing, and Support agents with an executive CEO dashboard. Designed the HR &amp; Support agents alongside a role-permissioned RAG knowledge base.</p>
+            <div class="chips"><span class="chip">Autonomous Agents</span><span class="chip">RAG</span><span class="chip">Vector Search</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 05: Plant Disease Classifier -->
+          <article class="project" data-category="vision" data-id="plant-disease">
+            <div class="project-visual">
+              <span class="project-badge">Verified GitHub Repo</span>
+              <a href="https://github.com/Samiaqadir/plantvillage-classification" target="_blank" rel="noopener" class="project-gh-pill" title="View Source on GitHub" onclick="event.stopPropagation();">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/></svg>
+                GitHub Repo ↗
+              </a>
+              <span class="num">05</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15z"/><path d="M5 19L14 10"/></svg>
+            </div>
+            <div class="when">Mar 2024 – Dec 2024</div>
+            <h4>Plant Disease Classifier</h4>
+            <p>Deep Convolutional Neural Network trained on 50,000+ PlantVillage leaf images, evaluated across 38 crop disease classes with confusion matrices and data augmentation.</p>
+            <div class="chips"><span class="chip">CNN</span><span class="chip">Computer Vision</span><span class="chip">50K+ Images</span><span class="chip">TensorFlow</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 06: Skin Disease Detection -->
+          <article class="project" data-category="vision" data-id="skin-disease">
+            <div class="project-visual">
+              <span class="project-badge">Mobile + Deep Learning</span>
+              <span class="num">06</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1.2"/><circle cx="14.5" cy="13.5" r="1.6"/><circle cx="10.5" cy="15" r="0.8"/></svg>
+            </div>
+            <div class="when">Jan 2024 – Feb 2025</div>
+            <h4>Skin Disease Detection</h4>
+            <p>CNN models trained on clinical dermatological datasets, deployed inside a cross-platform React Native app backed by Firebase cloud infrastructure.</p>
+            <div class="chips"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">React Native</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+
+          <!-- 07: Movie Recommender -->
+          <article class="project" data-category="ml" data-id="movie-recommender">
+            <div class="project-visual">
+              <span class="project-badge">Verified GitHub Repo</span>
+              <a href="https://github.com/Samiaqadir/Movie-recomendation-system" target="_blank" rel="noopener" class="project-gh-pill" title="View Source on GitHub" onclick="event.stopPropagation();">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/></svg>
+                GitHub Repo ↗
+              </a>
+              <span class="num">07</span>
+              <span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <svg class="art" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="M8 3l4 3 4-3M10 10.5v5l4-2.5z"/></svg>
+            </div>
+            <div class="when">Mar 2023 – Dec 2023</div>
+            <h4>Movie Recommender System</h4>
+            <p>Content-based filtering using cosine similarity vectors and TF-IDF feature transformations across high-dimensional movie metadata.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Scikit-Learn</span><span class="chip">NLP Similarity</span></div>
+            <div class="project-cta">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="band contact" id="contact">
+      <div class="container">
+        <div class="contact-top">
+          <div>
+            <div class="label">Get in touch</div>
+            <h2 class="h-big split"><span class="line-mask"><span>Let's build</span></span><span class="line-mask"><span>together</span></span></h2>
+            <p class="lead">Open to full-time AI engineering, machine learning automation roles, and collaborative technical initiatives.</p>
+            <div class="about-actions" style="margin-top:24px;">
+              <button class="btn light" id="copyEmailBtn" type="button">Copy Email <span class="ic"><svg viewBox="0 0 24 24"><path d="M8 4v12a2 2 0 0 0 2 2h8M16 4H8a2 2 0 0 0-2 2v10"/></svg></span></button>
+              <a href="Samia_Qadir_CV_Updated.pdf" download class="btn btn-outline light">Download CV</a>
+            </div>
+          </div>
+
+          <!-- Quick Email Composer Form -->
+          <div class="contact-form reveal-up">
+            <div class="label" style="color:var(--band-muted); margin-bottom:0;">Quick Direct Message</div>
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject / Role Opportunity</label>
+              <input type="text" id="contactSubject" class="form-control" placeholder="AI Engineer Role / Project Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Hi Samia, I saw your portfolio and would love to discuss..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn light" id="sendEmailBtn" style="flex:1">Send via Email <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="contact-list">
+          <div class="contact-item" id="cardEmail" role="button" tabindex="0" title="Click to copy email">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><small>Email (Click to Copy)</small><strong>samiaqadir906@gmail.com</strong></div>
+          </div>
+          <a class="contact-item" href="tel:+923127051052" title="Call directly">
+            <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <div><small>Phone</small><strong>+92 312 7051052</strong></div>
+          </a>
+          <a class="contact-item" href="http://www.linkedin.com/in/samiaghulamqadir" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+            <div><small>LinkedIn</small><strong>in/samiaghulamqadir ↗</strong></div>
+          </a>
+          <a class="contact-item" href="https://github.com/Samiaqadir" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V22"/></svg>
+            <div><small>GitHub</small><strong>github.com/Samiaqadir ↗</strong></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-ic">✓</span> <span id="toastMsg">Email copied to clipboard!</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Samia Ghulam Qadir</span>
+      <span>AI Automation &amp; Machine Learning Developer</span>
+    </div>
+  </footer>
+
+  <!-- Animation & Utility Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ---------------- Project Data Archive ---------------- */
+    const PROJECTS_ARCHIVE = {
+      "resume-builder-ai": {
+        num: "01",
+        title: "ResumeBuilderAI — Mobile GenAI App",
+        tagline: "React Native application powered by Groq API & LLaMA 3.1 8B for ATS-optimized resume & cover letter generation",
+        when: "2026 · Personal Open Source Project",
+        status: "Verified GitHub Open Source",
+        githubUrl: "https://github.com/Samiaqadir/ResumeBuilderAI",
+        problem: "Job applicants spend hours manually drafting cover letters and reformatting resumes for each job application, frequently failing automated ATS keyword screening.",
+        architecture: [
+          "Engineered a cross-platform mobile client in React Native (0.85) with TypeScript and React Navigation Native Stack.",
+          "Integrated the Groq Cloud API with `llama-3.1-8b-instant` for ultra-low latency (<1.2s) inference.",
+          "Designed structured JSON prompt engineering enforcing strict schema outputs for professional summary, extracted skills array, formatted work experience, and tailored 3-paragraph cover letters.",
+          "Implemented offline persistence with `@react-native-async-storage/async-storage` for saving, editing, and reviewing generated applications."
+        ],
+        metrics: [
+          { label: "AI Engine", val: "LLaMA 3.1 8B via Groq" },
+          { label: "Mobile Stack", val: "React Native + TS" },
+          { label: "Generation Speed", val: "<1.2s Full Resume" }
+        ],
+        chips: ["React Native", "Groq API", "LLaMA 3.1", "TypeScript", "AsyncStorage", "Prompt Engineering", "JSON Schema"]
+      },
+      "pc-agent": {
+        num: "02",
+        title: "Voice + Gesture PC Agent",
+        tagline: "Multimodal desktop assistant powered by faster-whisper and Piper neural TTS",
+        when: "2026 – Present · Team R&D",
+        status: "Active Team R&D",
+        githubUrl: "https://github.com/Samiaqadir",
+        problem: "Existing desktop voice assistants rely on high-latency cloud APIs, fail on background noise, and cannot synthesize speech locally without severe CPU throttling.",
+        architecture: [
+          "Real-time audio capture pipeline with native sample-rate detection and dynamic resampling to 16kHz mono format.",
+          "faster-whisper STT with Silero Voice Activity Detection (VAD) for instant, offline transcription.",
+          "Piper neural text-to-speech engine delivering human-like voice responses with <150ms synthesis latency.",
+          "Multi-agent orchestrator connecting parsed voice commands with computer vision hand gesture recognition and automated OS actions."
+        ],
+        metrics: [
+          { label: "Target Latency", val: "<300ms end-to-end" },
+          { label: "Execution Model", val: "100% Local / Offline" },
+          { label: "Speech Accuracy", val: "98% across accents" }
+        ],
+        chips: ["faster-whisper", "Piper TTS", "Python", "PyAudio", "Multimodal AI", "Threading", "OS Automation"]
+      },
+      "counsel-bot": {
+        num: "03",
+        title: "CounselBot — Career AI Platform",
+        tagline: "Deep learning conversational agent & aptitude classifier predicting top matching student careers",
+        when: "Academic Project · KFUEIT",
+        status: "Verified GitHub Open Source",
+        githubUrl: "https://github.com/Samiaqadir/CounselBot-main",
+        problem: "Students frequently make career choices without structured aptitude evaluations or objective data-driven matching against current industry occupations.",
+        architecture: [
+          "Trained a custom Artificial Neural Network in TensorFlow/Keras (`botmodel.h5`) for intent classification and conversational guidance.",
+          "Engineered an NLP text processing pipeline utilizing NLTK tokenization, vocabulary mapping (`tokens.pkl`, `words.pkl`), and pattern matching.",
+          "Developed a multi-attribute career inclination algorithm correlating psychometric responses across `Graduate.csv`, `Occupations.csv`, and `Subjects.csv`.",
+          "Deployed an interactive Streamlit web dashboard providing customized evaluations and top 5 profession recommendations."
+        ],
+        metrics: [
+          { label: "Model Architecture", val: "TensorFlow / Keras ANN" },
+          { label: "NLP Engine", val: "NLTK Tokenizers & Pickles" },
+          { label: "Interface", val: "Interactive Streamlit" }
+        ],
+        chips: ["TensorFlow", "Keras", "NLTK", "NLP", "Streamlit", "Python", "Pandas", "Pickle"]
+      },
+      "ai-suite": {
+        num: "04",
+        title: "AI Employee Suite",
+        tagline: "Enterprise autonomous agents for HR, Sales, and Support with executive dashboard",
+        when: "2026 – Present · SMJ Solutions (Punjab CMIT)",
+        status: "Enterprise Production",
+        githubUrl: "https://github.com/Samiaqadir",
+        problem: "Organizations lose hours to repetitive employee requests and fragmented documentation without role-based confidentiality safeguards.",
+        architecture: [
+          "Specialized agent personas for HR policy, Customer Support, Marketing, and Sales with tool calling.",
+          "RAG knowledge base utilizing vector embeddings and semantic chunking for high-accuracy document retrieval.",
+          "Role-Based Access Control (RBAC) ensuring sensitive employee files remain protected.",
+          "Human-in-the-loop escalation routing for complex or confidential inquiries."
+        ],
+        metrics: [
+          { label: "Agents Deployed", val: "4 Core Business Agents" },
+          { label: "Inquiry Deflection", val: "70%+ repetitive queries" },
+          { label: "Security", val: "Role-permissioned RAG" }
+        ],
+        chips: ["Autonomous Agents", "RAG Systems", "Vector Embeddings", "Prompt Engineering", "Python", "n8n", "CEO Analytics"]
+      },
+      "plant-disease": {
+        num: "05",
+        title: "Plant Disease Classifier",
+        tagline: "Large-scale agricultural crop pathology detection across 50,000+ leaf images",
+        when: "Mar 2024 – Dec 2024",
+        status: "Verified GitHub Open Source",
+        githubUrl: "https://github.com/Samiaqadir/plantvillage-classification",
+        problem: "Early fungal and bacterial crop diseases look deceptively similar, causing severe crop damage before traditional diagnostic methods detect them.",
+        architecture: [
+          "Trained deep CNN architectures over 50,000 high-resolution leaf images from the PlantVillage dataset across 38 distinct plant and disease classes.",
+          "Extensive data augmentation (rotation, shearing, horizontal flip, zoom) to prevent overfitting on specific lighting setups.",
+          "Hyperparameter tuning with Adam optimizer, categorical cross-entropy, and early stopping callbacks.",
+          "Comprehensive model evaluation through confusion matrices, F1-score benchmarks, and ROC curves."
+        ],
+        metrics: [
+          { label: "Dataset Size", val: "50,000+ Leaf Images" },
+          { label: "Classes", val: "38 Plant Disease Categories" },
+          { label: "Evaluation", val: "Confusion Matrix & F1" }
+        ],
+        chips: ["CNN", "Computer Vision", "TensorFlow", "Scikit-Learn", "Matplotlib", "Python", "Jupyter"]
+      },
+      "skin-disease": {
+        num: "06",
+        title: "Skin Disease Detection App",
+        tagline: "Mobile dermatological triage using Deep Convolutional Neural Networks",
+        when: "Jan 2024 – Feb 2025",
+        status: "Completed & Tested",
+        githubUrl: "https://github.com/Samiaqadir",
+        problem: "Accessible dermatological advice is scarce in non-metropolitan areas, leading to delayed medical attention for progressive skin lesions.",
+        architecture: [
+          "Deep Convolutional Neural Network (CNN) trained with transfer learning on multi-class dermatological datasets.",
+          "Image pre-processing pipeline including lesion cropping, color balance normalization, and random augmentations.",
+          "Cross-platform mobile UI built in React Native delivering instantaneous confidence breakdowns.",
+          "Firebase backend integrating secure authentication, user diagnostic history, and cloud synchronization."
+        ],
+        metrics: [
+          { label: "Model Architecture", val: "CNN + Transfer Learning" },
+          { label: "Mobile App", val: "React Native (iOS/Android)" },
+          { label: "Backend", val: "Firebase Firestore & Auth" }
+        ],
+        chips: ["TensorFlow", "Keras", "Convolutional Neural Networks", "React Native", "Firebase", "Computer Vision"]
+      },
+      "movie-recommender": {
+        num: "07",
+        title: "Movie Recommender System",
+        tagline: "Content-based semantic movie filtering using NLP feature extraction",
+        when: "Mar 2023 – Dec 2023",
+        status: "Verified GitHub Open Source",
+        githubUrl: "https://github.com/Samiaqadir/Movie-recomendation-system",
+        problem: "Vast entertainment catalogs overwhelm users with generic genre filters that fail to capture nuanced thematic similarity.",
+        architecture: [
+          "Data cleaning and wrangling across TMDB 5,000 movie records with Pandas.",
+          "Text normalization, stop-word removal, and stemming on combined plot overviews, director credits, and genre tags.",
+          "High-dimensional vectorization using CountVectorizer and TF-IDF matrices.",
+          "Cosine similarity calculation enabling instantaneous top-N semantic movie recommendations."
+        ],
+        metrics: [
+          { label: "Dataset", val: "TMDB 5,000+ Titles" },
+          { label: "Methodology", val: "Cosine Similarity & TF-IDF" },
+          { label: "Speed", val: "<50ms query similarity" }
+        ],
+        chips: ["Python", "Scikit-Learn", "Pandas", "NumPy", "NLP", "Cosine Distance", "Jupyter"]
+      }
+    };
+
+    /* ---------------- Smooth scroll (Lenis + GSAP ticker) ---------------- */
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+    lenis.stop(); // locked until preloader clears
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        if (href === "#") return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { duration: 1.5, offset: -70 });
+        closeMobileNav();
+      });
+    });
+
+    /* ---------------- Frame sequence scrubber ---------------- */
+    const FRAME_COUNT = 300;
+    const framePath = (i) => `sami/ezgif-frame-${String(i + 1).padStart(3, "0")}.jpg`;
+    const canvas = document.getElementById("frames");
+    const ctx = canvas.getContext("2d");
+    const images = [];
+    const seq = { frame: 0 };
+    const loaderFill = document.getElementById("loaderFill");
+    const loaderPercent = document.getElementById("loaderPercent");
+    const skipLoadBtn = document.getElementById("skipLoadBtn");
+    let loaded = 0;
+    let isAppReady = false;
+
+    // Show skip load button after 1.8 seconds if still preloading
+    setTimeout(() => {
+      if (!isAppReady && skipLoadBtn) skipLoadBtn.classList.add("visible");
+    }, 1800);
+
+    // Failsafe timeout to prevent any infinite stall
+    setTimeout(() => {
+      if (!isAppReady && loaded >= 12) safeInit();
+    }, 3600);
+
+    if (skipLoadBtn) {
+      skipLoadBtn.addEventListener("click", () => safeInit());
+    }
+
+    for (let i = 0; i < FRAME_COUNT; i++) {
+      const img = new Image();
+      img.src = framePath(i);
+      img.onload = img.onerror = () => {
+        loaded++;
+        const pct = Math.round((loaded / FRAME_COUNT) * 100);
+        if (loaderFill) loaderFill.style.width = `${pct}%`;
+        if (loaderPercent) loaderPercent.textContent = `${pct}%`;
+        if (i === 0) render();
+        if (loaded === FRAME_COUNT) safeInit();
+      };
+      images.push(img);
+    }
+
+    function safeInit() {
+      if (isAppReady) return;
+      isAppReady = true;
+      init();
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      render();
+    }
+
+    const PAGE_BG = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim() || "#e7e5e1";
+    const HEADER_SPACE = 110;
+    const MIN_VISIBLE = 0.6;
+
+    function render() {
+      const img = images[Math.round(seq.frame)];
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const cw = canvas.width, ch = canvas.height;
+      const dpr = cw / window.innerWidth;
+      const top = HEADER_SPACE * dpr;
+      const iw = img.naturalWidth, ih = img.naturalHeight;
+      const scale = Math.min((ch - top) / ih, cw / (iw * MIN_VISIBLE));
+      const w = iw * scale, h = ih * scale;
+      const x = (cw - w) / 2, y = top;
+
+      ctx.fillStyle = PAGE_BG;
+      ctx.fillRect(0, 0, cw, ch);
+      ctx.drawImage(img, x, y, w, h);
+
+      const side = Math.min(w * 0.14, 200 * dpr);
+      const fade = (x0, y0, x1, y1, rx, ry, rw, rh) => {
+        const g = ctx.createLinearGradient(x0, y0, x1, y1);
+        g.addColorStop(0, PAGE_BG);
+        g.addColorStop(1, "rgba(231, 229, 225, 0)");
+        ctx.fillStyle = g;
+        ctx.fillRect(rx, ry, rw, rh);
+      };
+      if (x > -side) {
+        fade(Math.max(x, 0), 0, Math.max(x, 0) + side, 0, Math.max(x, 0) - 2, y, side + 2, h);
+        fade(Math.min(x + w, cw), 0, Math.min(x + w, cw) - side, 0, Math.min(x + w, cw) - side, y, side + 2, h);
+      }
+      const bottom = h * 0.24;
+      fade(0, y + h, 0, y + h - bottom, 0, y + h - bottom, cw, bottom + 4);
+    }
+
+    window.addEventListener("resize", resize);
+    resize();
+
+    /* ---------------- Typed roles ---------------- */
+    function typeRoles() {
+      const el = document.querySelector(".typed");
+      if (!el) return;
+      const roles = ["AI Engineer", "ML Developer", "Automation Builder", "GenAI Creator"];
+      const tl = gsap.timeline({ repeat: -1 });
+      roles.forEach((role) => {
+        const t = { n: 0 };
+        const write = () => (el.textContent = role.slice(0, Math.round(t.n)));
+        tl.to(t, { n: role.length, duration: role.length * 0.07, ease: "none", onUpdate: write })
+          .to(t, { n: 0, duration: role.length * 0.035, ease: "none", onUpdate: write, delay: 1.6 });
+      });
+    }
+
+    /* ---------------- Metrics counter animation ---------------- */
+    function initCounters() {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((c) => {
+        const target = parseInt(c.getAttribute("data-target"), 10);
+        ScrollTrigger.create({
+          trigger: c,
+          start: "top 90%",
+          once: true,
+          onEnter: () => {
+            gsap.to(c, {
+              innerText: target,
+              duration: 2,
+              ease: "power2.out",
+              snap: { innerText: 1 },
+              onUpdate: () => {
+                c.innerText = Math.round(c.innerText).toLocaleString();
+              }
+            });
+          }
+        });
+      });
+
+      const decimalCounters = document.querySelectorAll(".counter-decimal");
+      decimalCounters.forEach((c) => {
+        const target = parseFloat(c.getAttribute("data-target"));
+        ScrollTrigger.create({
+          trigger: c,
+          start: "top 90%",
+          once: true,
+          onEnter: () => {
+            const obj = { val: 0 };
+            gsap.to(obj, {
+              val: target,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => {
+                c.innerText = obj.val.toFixed(2);
+              }
+            });
+          }
+        });
+      });
+    }
+
+    /* ---------------- Init after preload ---------------- */
+    function init() {
+      const loader = document.getElementById("loader");
+      gsap.to(loader, { autoAlpha: 0, duration: 0.7, ease: "power2.out", onComplete: () => loader.remove() });
+      gsap.from("#frames", { autoAlpha: 0, scale: 1.06, duration: 1.4, ease: "power3.out" });
+      lenis.start();
+
+      gsap.from(".wordmark .ch span", { yPercent: 105, duration: 1.2, ease: "power4.out", stagger: 0.07, delay: 0.25 });
+      gsap.from(".reveal-hero", { y: 24, autoAlpha: 0, duration: 0.9, ease: "power3.out", stagger: 0.1, delay: 0.7 });
+      typeRoles();
+      initCounters();
+
+      // Background scrubber
+      gsap.to(seq, {
+        frame: FRAME_COUNT - 1, snap: "frame", ease: "none", onUpdate: render,
+        scrollTrigger: { start: 0, end: "max", scrub: 0.8 },
+      });
+      gsap.to(".progress", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: true } });
+
+      // Veil transition
+      gsap.to(".bg-shade", {
+        opacity: 0.55, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+      });
+
+      // Wordmark spread
+      const chars = gsap.utils.toArray(".wordmark .ch");
+      chars.forEach((ch, i) => {
+        const offset = (i - (chars.length - 1) / 2) * 60;
+        gsap.to(ch, {
+          xPercent: offset, yPercent: -30, autoAlpha: 0, ease: "none",
+          scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom 20%", scrub: true },
+        });
+      });
+      gsap.to([".hero-tag", ".hero-role", ".hero-actions > *", ".hero-side"], {
+        y: -50, autoAlpha: 0, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "20% top", end: "70% top", scrub: true },
+      });
+
+      // Header solid bar
+      const header = document.querySelector("header");
+      const backToTop = document.getElementById("backToTop");
+      lenis.on("scroll", ({ scroll }) => {
+        header.classList.toggle("scrolled", scroll > 40);
+        if (backToTop) backToTop.classList.toggle("visible", scroll > 450);
+      });
+
+      // Active nav link
+      const navLinks = document.querySelectorAll(".nav-left a");
+      navLinks.forEach((link) => {
+        ScrollTrigger.create({
+          trigger: link.getAttribute("href"), start: "top 50%", end: "bottom 50%",
+          onToggle: (self) => {
+            if (!self.isActive) return;
+            navLinks.forEach((a) => a.classList.remove("active"));
+            link.classList.add("active");
+          },
+        });
+      });
+
+      // Headings reveal
+      gsap.utils.toArray(".split").forEach((h) => {
+        gsap.from(h.querySelectorAll(".line-mask > span"), {
+          yPercent: 110, duration: 1.1, ease: "power4.out", stagger: 0.1,
+          scrollTrigger: { trigger: h, start: "top 85%" },
+        });
+      });
+
+      // Generic reveals
+      gsap.utils.toArray(".reveal-up").forEach((el) => {
+        gsap.from(el, {
+          y: 36, autoAlpha: 0, duration: 0.9, ease: "power3.out", clearProps: "transform",
+          scrollTrigger: { trigger: el, start: "top 85%" },
+        });
+      });
+
+      // Staggered grids
+      const stagger = (selector, trigger) =>
+        gsap.from(selector, {
+          y: 50, autoAlpha: 0, duration: 0.9, ease: "power3.out", stagger: 0.08,
+          clearProps: "transform",
+          scrollTrigger: { trigger, start: "top 92%" },
+        });
+      stagger(".feature", ".features");
+      stagger(".card", ".cards");
+      stagger(".project", ".projects");
+      stagger(".contact-item", ".contact-list");
+
+      // Project visual parallax
+      gsap.utils.toArray(".project-visual .num").forEach((n) => {
+        gsap.fromTo(n, { yPercent: 30 }, {
+          yPercent: -20, ease: "none",
+          scrollTrigger: { trigger: n.parentElement, start: "top bottom", end: "bottom top", scrub: true },
+        });
+      });
+
+      ScrollTrigger.refresh();
+    }
+
+    /* ---------------- Mobile Menu Navigation ---------------- */
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    function openMobileNav() {
+      menuToggle.classList.add("open");
+      mobileNav.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMobileNav() {
+      menuToggle.classList.remove("open");
+      mobileNav.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        if (mobileNav.classList.contains("open")) closeMobileNav();
+        else openMobileNav();
+      });
+    }
+
+    /* ---------------- Custom Desktop Cursor ---------------- */
+    const cursorDot = document.getElementById("cursorDot");
+    const cursorRing = document.getElementById("cursorRing");
+    if (cursorDot && cursorRing && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let ringX = mouseX, ringY = mouseY;
+
+      window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      });
+
+      function renderCursor() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+        requestAnimationFrame(renderCursor);
+      }
+      renderCursor();
+
+      const hoverTargets = "a, button, .project, .card, .contact-item, .filter-btn, .chip, .project-gh-pill";
+      document.addEventListener("mouseover", (e) => {
+        if (e.target.closest(hoverTargets)) document.body.classList.add("cursor-hover");
+      });
+      document.addEventListener("mouseout", (e) => {
+        if (e.target.closest(hoverTargets)) document.body.classList.remove("cursor-hover");
+      });
+    }
+
+    /* ---------------- Toast Notification ---------------- */
+    const toast = document.getElementById("toast");
+    const toastMsg = document.getElementById("toastMsg");
+    let toastTimeout;
+    function showToast(message) {
+      if (!toast) return;
+      toastMsg.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+    }
+
+    function copyToClipboard(text, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg);
+      }).catch(() => {
+        showToast(`Copied: ${text}`);
+      });
+    }
+
+    // Copy Email Triggers
+    const emailStr = "samiaqadir906@gmail.com";
+    const copyEmailBtn = document.getElementById("copyEmailBtn");
+    const copyEmailQuickBtn = document.getElementById("copyEmailQuickBtn");
+    const cardEmail = document.getElementById("cardEmail");
+
+    if (copyEmailBtn) copyEmailBtn.addEventListener("click", () => copyToClipboard(emailStr, "✓ Email copied: samiaqadir906@gmail.com"));
+    if (copyEmailQuickBtn) copyEmailQuickBtn.addEventListener("click", () => copyToClipboard(emailStr, "✓ Email copied: samiaqadir906@gmail.com"));
+    if (cardEmail) cardEmail.addEventListener("click", () => copyToClipboard(emailStr, "✓ Email copied: samiaqadir906@gmail.com"));
+
+    /* ---------------- Direct Email Composer ---------------- */
+    const sendEmailBtn = document.getElementById("sendEmailBtn");
+    if (sendEmailBtn) {
+      sendEmailBtn.addEventListener("click", () => {
+        const name = document.getElementById("contactName").value.trim();
+        const subject = document.getElementById("contactSubject").value.trim() || "Inquiry from Portfolio";
+        const message = document.getElementById("contactMessage").value.trim();
+
+        const body = encodeURIComponent(`Hi Samia,\n\n${message}\n\nBest regards,\n${name}`);
+        const mailtoUri = `mailto:${emailStr}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        window.location.href = mailtoUri;
+        showToast("Opening default mail client...");
+      });
+    }
+
+    /* ---------------- Back to top ---------------- */
+    const backToTopBtn = document.getElementById("backToTop");
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener("click", () => {
+        lenis.scrollTo(0, { duration: 1.6 });
+      });
+    }
+
+    /* ---------------- Interactive Project Filtering ---------------- */
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const category = btn.getAttribute("data-filter");
+
+        projectCards.forEach((card) => {
+          const cardCat = card.getAttribute("data-category");
+          const shouldShow = category === "all" || cardCat === category;
+          if (shouldShow) {
+            gsap.to(card, {
+              duration: 0.4, autoAlpha: 1, scale: 1, display: "flex", ease: "power2.out"
+            });
+          } else {
+            gsap.to(card, {
+              duration: 0.3, autoAlpha: 0, scale: 0.95, display: "none", ease: "power2.in"
+            });
+          }
+        });
+        ScrollTrigger.refresh();
+      });
+    });
+
+    /* ---------------- Interactive Case Study Modal ---------------- */
+    const projectModal = document.getElementById("projectModal");
+    const modalContent = document.getElementById("modalContent");
+    const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+    function openProjectModal(projectId) {
+      const p = PROJECTS_ARCHIVE[projectId];
+      if (!p) return;
+
+      modalContent.innerHTML = `
+        <div class="modal-header">
+          <div class="label">${p.when} · ${p.status}</div>
+          <h3>${p.title}</h3>
+          <p class="modal-tagline">${p.tagline}</p>
+        </div>
+        <div class="modal-body">
+          <div class="modal-section">
+            <h5>Problem Statement &amp; Context</h5>
+            <p>${p.problem}</p>
+          </div>
+          <div class="modal-section">
+            <h5>Architecture &amp; Key Innovations</h5>
+            <ul class="modal-list">
+              ${p.architecture.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h5>Key Results &amp; Target Benchmarks</h5>
+            <div class="modal-metrics-grid">
+              ${p.metrics.map(m => `
+                <div class="modal-metric-card">
+                  <small>${m.label}</small>
+                  <strong>${m.val}</strong>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          <div class="modal-section">
+            <h5>Technology Stack</h5>
+            <div class="chips">
+              ${p.chips.map(chip => `<span class="chip">${chip}</span>`).join("")}
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            ${p.githubUrl && p.githubUrl !== "https://github.com/Samiaqadir" ? `
+              <a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn light">
+                View Source on GitHub ↗
+              </a>
+            ` : `
+              <a href="https://github.com/Samiaqadir" target="_blank" rel="noopener" class="btn light">
+                Visit GitHub Profile ↗
+              </a>
+            `}
+            <a href="mailto:samiaqadir906@gmail.com?subject=Regarding%20${encodeURIComponent(p.title)}" class="btn btn-outline light">
+              Inquire About This Project <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </div>
+          <span class="label" style="color:var(--band-muted)">${p.status}</span>
+        </div>
+      `;
+
+      projectModal.classList.add("active");
+      projectModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      projectModal.classList.remove("active");
+      projectModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    projectCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const id = card.getAttribute("data-id");
+        if (id) openProjectModal(id);
+      });
+    });
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+    if (projectModal) {
+      projectModal.addEventListener("click", (e) => {
+        if (e.target === projectModal) closeModal();
+      });
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+        closeMobileNav();
+      }
+    });
+  </script>
+</body>
+</html>
